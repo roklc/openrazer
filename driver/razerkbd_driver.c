@@ -206,6 +206,20 @@ static const struct razer_key_translation chroma_keys_6[] = {
     { 0 }
 };
 
+// Razer Ornata V3 Tenkeyless
+static const struct razer_key_translation chroma_keys_7[] = {
+    { KEY_F9, RAZER_MACRO_KEY },
+    { KEY_F10, RAZER_GAME_KEY },
+    { KEY_F11, RAZER_BRIGHTNESS_DOWN },
+    { KEY_F12, RAZER_BRIGHTNESS_UP },
+    { KEY_INSERT, KEY_PRINT },
+    { KEY_HOME, KEY_SCROLLLOCK },
+    { KEY_PAGEUP, KEY_PAUSE },
+    { KEY_PAGEDOWN, KEY_SLEEP },
+    { KEY_DELETE, KEY_MUTE},
+    { 0 }
+};
+
 /**
  * Essentially search through the struct array above.
  */
@@ -3461,7 +3475,7 @@ static int razer_event(struct hid_device *hdev, struct hid_field *field, struct 
     case USB_DEVICE_ID_RAZER_DEATHSTALKER_V2_PRO_TKL_WIRED:
     case USB_DEVICE_ID_RAZER_DEATHSTALKER_V2_PRO_TKL_WIRELESS:
     case USB_DEVICE_ID_RAZER_ORNATA_V3_TENKEYLESS:
-        translation = find_translation(chroma_keys_5, usage->code);
+        translation = find_translation(chroma_keys_7, usage->code);
         break;
 
     case USB_DEVICE_ID_RAZER_BLACKWIDOW_V4_75PCT:
